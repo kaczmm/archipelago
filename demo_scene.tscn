@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://domta6k7dh3hf"]
+
+[ext_resource type="PackedScene" uid="uid://cyyavpt06ith0" path="res://player_ship.tscn" id="1_iapjp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_no5d7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iapjp"]
+albedo_color = Color(0, 0.35466674, 0.56, 1)
+
+[node name="DemoScene" type="Node3D"]
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(21318.033, 0, 0, 0, 1, 0, 0, 0, 8641.558, 0, 0, 0)
+mesh = SubResource("PlaneMesh_no5d7")
+surface_material_override/0 = SubResource("StandardMaterial3D_iapjp")
+
+[node name="PlayerShip" parent="." instance=ExtResource("1_iapjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0030637383, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.80869883, -0.014217644, -0.588051, 0.58822286, 0.01954666, 0.8084626, 0, -0.9997079, 0.024170505, 412.69913, 233.09566, -250.50159)
+light_energy = 1.125
+shadow_enabled = true
